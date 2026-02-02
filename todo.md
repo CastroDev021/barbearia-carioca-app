@@ -66,3 +66,13 @@
 - [x] Criar checkpoint final
 - [x] Documentar funcionalidades
 - [x] Preparar instruções de uso
+
+
+## Galeria de Trabalhos (Nova Feature)
+- [x] Criar tipos TypeScript para fotos e galeria
+- [x] Adicionar armazenamento de fotos (AsyncStorage + base64)
+- [x] Criar tela de galeria para clientes
+- [x] Criar tela de upload de fotos no admin
+- [x] Implementar seleção de fotos da câmera/galeria
+- [x] Adicionar aba de galeria na navegação
+- [x] Testar upload e exibição de fotos

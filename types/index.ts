@@ -39,3 +39,18 @@ export interface DashboardMetrics {
   receitaHoje: number;
   totalMes: number;
 }
+
+export interface GalleryPhoto {
+  id: string;
+  titulo: string;
+  descricao: string;
+  barbeiro: string;
+  data: string;
+  imagem: string;
+  categoria: "corte" | "barba" | "design" | "outros";
+  curtidas: number;
+}
+
+export interface GalleryData {
+  fotos: GalleryPhoto[];
+}

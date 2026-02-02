@@ -86,6 +86,13 @@ export default function AdminDashboardScreen() {
       route: "/admin/services",
       color: "#34495e",
     },
+    {
+      icon: "📸",
+      title: "Gerenciar Galeria",
+      subtitle: "Fotos dos trabalhos",
+      route: "/admin/gallery-manage",
+      color: "#f39c12",
+    },
   ];
 
   return (

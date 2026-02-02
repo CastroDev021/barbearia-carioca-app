@@ -21,6 +21,13 @@ export default function HomeScreen() {
     router.push("/admin-login");
   };
 
+  const handleGalleryPress = () => {
+    if (Platform.OS !== "web") {
+      Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
+    }
+    router.push("/gallery");
+  };
+
   return (
     <ScreenContainer className="justify-center items-center p-6">
       <View className="items-center gap-8 w-full max-w-md">
@@ -57,6 +64,25 @@ export default function HomeScreen() {
             <Text className="text-xl font-bold text-white">SOU CLIENTE</Text>
             <Text className="text-base text-white opacity-90 mt-1">
               Quero Agendar
+            </Text>
+          </Pressable>
+
+          {/* Botão Galeria */}
+          <Pressable
+            onPress={handleGalleryPress}
+            style={({ pressed }) => [
+              {
+                backgroundColor: "#e67e22",
+                transform: [{ scale: pressed ? 0.97 : 1 }],
+                opacity: pressed ? 0.9 : 1,
+              },
+            ]}
+            className="rounded-2xl p-6 items-center shadow-lg"
+          >
+            <Text className="text-5xl mb-2">📸</Text>
+            <Text className="text-xl font-bold text-white">GALERIA</Text>
+            <Text className="text-base text-white opacity-90 mt-1">
+              Ver Trabalhos
             </Text>
           </Pressable>
 
