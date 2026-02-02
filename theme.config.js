@@ -9,6 +9,9 @@ const themeColors = {
   success: { light: '#22C55E', dark: '#4ADE80' },
   warning: { light: '#F59E0B', dark: '#FBBF24' },
   error: { light: '#EF4444', dark: '#F87171' },
+  admin: { light: '#02200e', dark: '#1a4d2e' },
+  client: { light: '#5355c2', dark: '#7477d9' },
+  pending: { light: '#3498db', dark: '#5dade2' },
 };
 
 module.exports = { themeColors };

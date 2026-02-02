@@ -1,48 +1,90 @@
-import { ScrollView, Text, View, TouchableOpacity } from "react-native";
-
+import { View, Text, Pressable, Image, Platform } from "react-native";
 import { ScreenContainer } from "@/components/screen-container";
+import { useColors } from "@/hooks/use-colors";
+import { router } from "expo-router";
+import * as Haptics from "expo-haptics";
 
-/**
- * Home Screen - NativeWind Example
- *
- * This template uses NativeWind (Tailwind CSS for React Native).
- * You can use familiar Tailwind classes directly in className props.
- *
- * Key patterns:
- * - Use `className` instead of `style` for most styling
- * - Theme colors: use tokens directly (bg-background, text-foreground, bg-primary, etc.); no dark: prefix needed
- * - Responsive: standard Tailwind breakpoints work on web
- * - Custom colors defined in tailwind.config.js
- */
 export default function HomeScreen() {
+  const colors = useColors();
+
+  const handleClientPress = () => {
+    if (Platform.OS !== "web") {
+      Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
+    }
+    router.push("/booking");
+  };
+
+  const handleAdminPress = () => {
+    if (Platform.OS !== "web") {
+      Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
+    }
+    router.push("/admin-login");
+  };
+
   return (
-    <ScreenContainer className="p-6">
-      <ScrollView contentContainerStyle={{ flexGrow: 1 }}>
-        <View className="flex-1 gap-8">
-          {/* Hero Section */}
-          <View className="items-center gap-2">
-            <Text className="text-4xl font-bold text-foreground">Welcome</Text>
-            <Text className="text-base text-muted text-center">
-              Edit app/(tabs)/index.tsx to get started
-            </Text>
-          </View>
-
-          {/* Example Card */}
-          <View className="w-full max-w-sm self-center bg-surface rounded-2xl p-6 shadow-sm border border-border">
-            <Text className="text-lg font-semibold text-foreground mb-2">NativeWind Ready</Text>
-            <Text className="text-sm text-muted leading-relaxed">
-              Use Tailwind CSS classes directly in your React Native components.
-            </Text>
-          </View>
-
-          {/* Example Button */}
-          <View className="items-center">
-            <TouchableOpacity className="bg-primary px-6 py-3 rounded-full active:opacity-80">
-              <Text className="text-background font-semibold">Get Started</Text>
-            </TouchableOpacity>
-          </View>
+    <ScreenContainer className="justify-center items-center p-6">
+      <View className="items-center gap-8 w-full max-w-md">
+        {/* Logo e Título */}
+        <View className="items-center gap-4">
+          <Image
+            source={require("@/assets/images/icon.png")}
+            style={{ width: 120, height: 120 }}
+            resizeMode="contain"
+          />
+          <Text className="text-4xl font-bold text-foreground text-center">
+            Barbearia do Carioca
+          </Text>
+          <Text className="text-base text-muted text-center">
+            Sistema de Agendamentos
+          </Text>
         </View>
-      </ScrollView>
+
+        {/* Botões de Escolha */}
+        <View className="w-full gap-4 mt-8">
+          {/* Botão Cliente */}
+          <Pressable
+            onPress={handleClientPress}
+            style={({ pressed }) => [
+              {
+                backgroundColor: colors.client,
+                transform: [{ scale: pressed ? 0.97 : 1 }],
+                opacity: pressed ? 0.9 : 1,
+              },
+            ]}
+            className="rounded-2xl p-6 items-center shadow-lg"
+          >
+            <Text className="text-5xl mb-2">👤</Text>
+            <Text className="text-xl font-bold text-white">SOU CLIENTE</Text>
+            <Text className="text-base text-white opacity-90 mt-1">
+              Quero Agendar
+            </Text>
+          </Pressable>
+
+          {/* Botão Admin */}
+          <Pressable
+            onPress={handleAdminPress}
+            style={({ pressed }) => [
+              {
+                backgroundColor: colors.admin,
+                transform: [{ scale: pressed ? 0.97 : 1 }],
+                opacity: pressed ? 0.9 : 1,
+              },
+            ]}
+            className="rounded-2xl p-6 items-center shadow-lg"
+          >
+            <Text className="text-5xl mb-2">💼</Text>
+            <Text className="text-xl font-bold text-white">ADMINISTRADOR</Text>
+            <Text className="text-base text-white opacity-90 mt-1">
+              Gerenciar Sistema
+            </Text>
+          </Pressable>
+        </View>
+
+        {/* Rodapé */}
+        <Text className="text-xs text-muted text-center mt-8">
+          © 2024 - Sistema desenvolvido com React Native
+        </Text>
+      </View>
     </ScreenContainer>
   );
 }

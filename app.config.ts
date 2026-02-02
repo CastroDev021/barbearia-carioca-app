@@ -32,7 +32,7 @@ const env = {
   appSlug: "barbearia-carioca-app",
   // S3 URL of the app logo - set this to the URL returned by generate_image when creating custom logo
   // Leave empty to use the default icon from assets/images/icon.png
-  logoUrl: "",
+  logoUrl: "https://private-us-east-1.manuscdn.com/sessionFile/HoDdiP6uCdjKKYAMfDYFwU/sandbox/rjG2xGq6lDel5QoAM0sbsv-img-1_1770041944000_na1fn_YmFyYmVhcmlhLWxvZ28.png?x-oss-process=image/resize,w_1920,h_1920/format,webp/quality,q_80&Expires=1798761600&Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9wcml2YXRlLXVzLWVhc3QtMS5tYW51c2Nkbi5jb20vc2Vzc2lvbkZpbGUvSG9EZGlQNnVDZGpLS1lBTWZEWUZ3VS9zYW5kYm94L3JqRzJ4R3E2bERlbDVRb0FNMHNic3YtaW1nLTFfMTc3MDA0MTk0NDAwMF9uYTFmbl9ZbUZ5WW1WaGNtbGhMV3h2WjI4LnBuZz94LW9zcy1wcm9jZXNzPWltYWdlL3Jlc2l6ZSx3XzE5MjAsaF8xOTIwL2Zvcm1hdCx3ZWJwL3F1YWxpdHkscV84MCIsIkNvbmRpdGlvbiI6eyJEYXRlTGVzc1RoYW4iOnsiQVdTOkVwb2NoVGltZSI6MTc5ODc2MTYwMH19fV19&Key-Pair-Id=K2HSFNDJXOU9YS&Signature=FCHpdVd6wyDKLShe0OXQlcsfQTOJc2Y8hHCVRAlk~3U0LjYIgyN8bPhLLVhohbyom4Q-ig5A9vWdWQ808iajWdhQMHaiH5qvfIcJ0hsFE-5b1MhlyzjmFyYjuD9diRJHh8zjvAva6It6BYsTD66HHWr-5wmzCBJyHEPTKuDDPOBpEHr3kO13SkmFUJOzAG9Oe6rstR63y3-tMr~jBgc5G4-6dIitpcnZMMKwAJk7b7yejo-kWHTDMX72TpTQOHScd0RUpxLhBzLYXJlhkvxiZlg3kw-xARNjCadywMaY~0nt~TQnM36z5GS5gRhEgT9vIGh4Y7EbTqS-BD-xaQRVdA__",
   scheme: schemeFromBundleId,
   iosBundleId: bundleId,
   androidPackage: bundleId,
